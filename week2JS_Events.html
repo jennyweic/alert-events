@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1,
+      h2 {
+        font-family: "Courier New", Courier, monospace;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        background: purple;
+        color: white;
+        padding: 15px;
+        border: 1px solid purple;
+        border-radius: 25px;
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello JavaScript Events</h1>
+
+    <button>Contact Us</button>
+
+    <h2>JavaScript Events Lesson 10 Challenge</h2>
+
+    <button class="apply">Apply now</button>
+
+    <script>
+      function contactUs() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email address?");
+
+        let h1 = document.querySelector("h1");
+        h1.innerHTML =
+          "Thank you for contacting us, " + name + ". We'll be in touch soon";
+      }
+
+      let contactButton = document.querySelector("button");
+
+      contactButton.addEventListener("click", contactUs);
+
+      // JavaScript Events Lesson 10 Challenge STARTS
+
+      function applyNow() {
+        let name = prompt("What is your first name?");
+        let age = prompt("How old are you?");
+
+        let h2 = document.querySelector("h2");
+        if (age >= 18) {
+          h2.innerHTML = "Hi, " + name + "! Welcome to SheCodes!";
+        } else {
+          h2.innerHTML = "Sorry, " + name + "! You cannot join SheCodes.";
+        }
+      }
+
+      let applyButton = document.querySelector(".apply");
+
+      applyButton.addEventListener("click", applyNow);
+
+      // JavaScript Events Lesson 10 Challenge ENDS
+    </script>
+  </body>
+</html>
